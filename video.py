@@ -4,7 +4,7 @@ from time import sleep
 # removable config - will prompt otherwise
 
 # mode = "auto"
-# images = "100"
+# images = "50"
 # delay = "10"
 # delaybetween = "0.5"
 # path = "train" 
