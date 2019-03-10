@@ -1,18 +1,37 @@
 import cv2, sys, os
 from time import sleep
 
-label = input("Please enter training class label: ").upper()
-mode = input("Training Mode [manual/auto]: ")
+# removable config - will prompt otherwise
+
+# mode = "auto"
+# images = "100"
+# delay = "10"
+# delaybetween = "0.5"
+# path = "train" 
+
+def is_set(variable):
+    return (variable in locals() or variable in globals())
+
+if not is_set('label'):
+    label = input("Please enter training class label: ").upper()
+
+if not is_set('mode'):
+    mode = input("Training Mode [manual/auto]: ")
 
 if mode != "manual" and mode != "auto":
     print("Training mode unrecognised")
     sys.exit()
 
 if mode == "auto":
-    images = input("Number of images to record per class: ")
-    delay = input("Delay before recording (seconds): ")
+    if not is_set('images'):
+        images = input("Number of images to record per class: ")
+    if not is_set('delay'):
+        delay = input("Delay before recording (seconds): ")
+    if not is_set('delaybetween'):
+        delaybetween = input("Delay between image captures: ")
 
-path = input("If folder required specify name otherwise leave blank: ")
+if not is_set('path'):
+    path = input("If folder required specify name otherwise leave blank: ")
 
 if path != "":
     if os.path.exists(path) == False:
@@ -38,14 +57,14 @@ if mode == "manual":
             break
         elif k%256 == 32:
             # SPACE pressed
-            img_name = path + "/" + label + "_1_{}.png".format(img_counter)
+            img_name = path + "/" + label + "_{}.png".format(img_counter)
             cv2.imwrite(img_name, frame)
             print("{} written!".format(img_name))
             img_counter += 1
 elif mode == "auto":
     ret, frame = cam.read()
     cv2.imshow("test", frame)
-    sleep(int(delay))
+    sleep(float(delay))
     while True and img_counter != int(images):
         ret, frame = cam.read()
         cv2.imshow("test", frame)
@@ -58,10 +77,11 @@ elif mode == "auto":
             print("Escape hit, closing...")
             break
 
-        img_name = path + "/" + label + "_1_{}.png".format(img_counter)
+        img_name = path + "/" + label + "_{}.png".format(img_counter)
         cv2.imwrite(img_name, frame)
         print("{} written!".format(img_name))
         img_counter += 1
+        sleep(float(delaybetween))
 
 cam.release()
 
