@@ -1,5 +1,8 @@
 # Dataset Creator
-Simple python script for creator Machine Learning dataset images, either manually or automatically, from your webcam.
+Simple python script for creator Machine Learning dataset images, either manually or automatically, from your webcam. This script was created for use with the below repositories, but can be utilised for generic ML projects.
+
+* https://github.com/Mquinn960/sign-language
+* https://github.com/Mquinn960/offline-trainer
 
 ![Alt text](/Preview.png?raw=true "Preview")
 
@@ -21,6 +24,11 @@ Simple python script for creator Machine Learning dataset images, either manuall
 * Install [Python 3](https://www.python.org/downloads/)
 * Install [Pip](https://pypi.org/project/pip/)
 
+## User Guide
+
+* Follow the prompts to use either manual (hit spacebar to capture an image) or auto mode (with capture times you specify)
+* (Optional) For many similar runs, uncomment the config within the script to skip any prompts
+
 ## Built With
 
 * [Python 3](https://www.python.org/downloads/) - Python programming language
@@ -36,6 +44,10 @@ Simple python script for creator Machine Learning dataset images, either manuall
 ## Authors
 
 * **[Matthew Quinn](http://mquinn.co.uk)**
+
+## Acknowledgements
+
+* **[derricw](https://stackoverflow.com/users/1390022/derricw)**
 
 ## License
 
