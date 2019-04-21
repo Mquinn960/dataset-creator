@@ -6,6 +6,8 @@ Simple python script for creator Machine Learning dataset images, either manuall
 
 ![Alt text](/Preview.png?raw=true "Preview")
 
+## For a comprehensive step by step guide on using these applications and some additional info on how they work, please see [my new help repo](https://github.com/Mquinn960/sign-language-help)
+
 ## Getting Started
 
 * Clone the repo onto your local machine by using:
@@ -28,6 +30,8 @@ Simple python script for creator Machine Learning dataset images, either manuall
 
 * Follow the prompts to use either manual (hit spacebar to capture an image) or auto mode (with capture times you specify)
 * (Optional) For many similar runs, uncomment the config within the script to skip any prompts
+
+### For a comprehensive step by step guide on using these applications and some additional info on how they work, please see [my new help repo](https://github.com/Mquinn960/sign-language-help)
 
 ## Built With
 
